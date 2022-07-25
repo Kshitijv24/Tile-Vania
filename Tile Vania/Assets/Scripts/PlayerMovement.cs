@@ -31,15 +31,15 @@ public class PlayerMovement : MonoBehaviour
         Vector2 playerVelocity = new Vector2(moveInput.x * moveSpeed, rb.velocity.y);
         rb.velocity = playerVelocity;
 
-        bool playerIsRunning = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
-        animator.SetBool("isRunning", playerIsRunning);
+        bool isPlayerRunning = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        animator.SetBool("isRunning", isPlayerRunning);
     }
 
     private void FlipSprite()
     {
-        bool playerIsRunning = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
+        bool isPlayerRunning = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
 
-        if (playerIsRunning)
+        if (isPlayerRunning)
         {
             transform.localScale = new Vector2(Mathf.Sign(rb.velocity.x), 1f);
         }
@@ -67,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = climbVelocity;
             rb.gravityScale = 0;
 
-            bool playerIsClimbingLadder = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
-            animator.SetBool("isClimbing", playerIsClimbingLadder);
+            bool isPlayerClimbingLadder = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
+            animator.SetBool("isClimbing", isPlayerClimbingLadder);
         }
         else if (!capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
         {
