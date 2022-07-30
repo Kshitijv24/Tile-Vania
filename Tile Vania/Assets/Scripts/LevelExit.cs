@@ -8,7 +8,10 @@ public class LevelExit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(LoadNextLeve());
+        if(collision.tag == "Player")
+        {
+            StartCoroutine(LoadNextLeve());
+        }
     }
 
     IEnumerator LoadNextLeve()
