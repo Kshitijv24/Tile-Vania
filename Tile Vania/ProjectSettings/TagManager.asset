@@ -20,7 +20,7 @@ TagManager:
   - Enemy
   - Hazards
   - Bullet
-  - 
+  - Intractable
   - 
   - 
   - 
@@ -56,6 +56,9 @@ TagManager:
     locked: 0
   - name: Hazards
     uniqueID: 1741204317
+    locked: 0
+  - name: Intractable
+    uniqueID: 777586673
     locked: 0
   - name: Enemy
     uniqueID: 1580404311
